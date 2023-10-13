@@ -6,8 +6,9 @@ clone_script:
 - git checkout -qf %APPVEYOR_REPO_COMMIT%
 
 init:
-- C:/msys64/usr/bin/wget.exe https://download.microsoft.com/download/B/C/4/BC4FA89D-4F7B-4022-A4C1-2B3B6E08D8BE/AppBuilderSetup_VS2015_v25520.zip
-- 7z.exe x -oAppBuilderSetup AppBuilderSetup_VS2015_v25520.zip
+- REM C:/msys64/usr/bin/wget.exe https://download.microsoft.com/download/B/C/4/BC4FA89D-4F7B-4022-A4C1-2B3B6E08D8BE/AppBuilderSetup_VS2015_v25520.zip
+- C:/msys64/usr/bin/wget.exe https://download.microsoft.com/download/B/C/4/BC4FA89D-4F7B-4022-A4C1-2B3B6E08D8BE/AppBuilderSetup_VS2012_v50806.zip
+- 7z.exe x -oAppBuilderSetup AppBuilderSetup_VS2012_v50806.zip
 - AppBuilderSetup\VSEmbedded_AppBuilder.exe /Quiet /NoRestart /Log log.txt & exit 0
 - type log.txt
 - REM wmic product get name
