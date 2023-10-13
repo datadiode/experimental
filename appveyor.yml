@@ -8,7 +8,7 @@ clone_script:
 init:
 - C:/msys64/usr/bin/wget.exe https://download.microsoft.com/download/B/C/4/BC4FA89D-4F7B-4022-A4C1-2B3B6E08D8BE/AppBuilderSetup_VS2015_v25520.zip
 - 7z.exe x -oAppBuilderSetup AppBuilderSetup_VS2015_v25520.zip
-- msiexec /i AppBuilderSetup/packages/windowsembeddedtools/appbuilder/VSEmbeddedAppBuilder.msi /qn /norestart
+- msiexec /i "AppBuilderSetup\\packages\\windowsembeddedtools\\appbuilder\\VSEmbeddedAppBuilder.msi" /qn /norestart
 - wmic product get name
 
 build_script:
