@@ -7,6 +7,7 @@ clone_script:
 - del C:\Tools\WebDriver\geckodriver.exe
 - C:/Python37-x64/Scripts/pip.exe install selenium
 - C:/Python37-x64/python.exe seleniumtest.py
+- type geckodriver.log
 - dir C:\Users\%USERNAME%\Downloads
 - C:/msys64/usr/bin/wget.exe https://download.microsoft.com/download/B/C/4/BC4FA89D-4F7B-4022-A4C1-2B3B6E08D8BE/AppBuilderSetup_VS2012_v50806.zip
 - REM C:/msys64/usr/bin/wget.exe https://github.com/datadiode/supplements/raw/main/Compact2013_SDK_GSeries.msi
