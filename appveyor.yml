@@ -11,7 +11,7 @@ init:
 - 7z.exe x -oAppBuilderSetup AppBuilderSetup_VS2012_v50806.zip
 - AppBuilderSetup\VSEmbedded_AppBuilder.exe /Quiet /NoRestart /Log log.txt & exit 0
 - type log.txt
-- REM wmic product get name
+- wmic product get name
 
 build_script:
 - dir
