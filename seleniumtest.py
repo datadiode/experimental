@@ -7,13 +7,17 @@ from selenium.webdriver.firefox.options import Options as FFOptions
 import os
 import time
 
-options = FFOptions()
-options.set_preference("browser.download.folderList", 2)
-options.set_preference("browser.download.manager.showWhenStarting", False)
-options.set_preference("browser.download.dir", os.getcwd())
-options.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/x-gzip")
+# options = FFOptions()
+# options.set_preference("browser.download.folderList", 2)
+# options.set_preference("browser.download.manager.showWhenStarting", False)
+# options.set_preference("browser.download.dir", os.getcwd())
+# options.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/x-gzip")
 
-driver = webdriver.Firefox(options)
+chromeOptions = webdriver.ChromeOptions()
+prefs = {"download.default_directory" : os.getcwd()}
+chromeOptions.add_experimental_option("prefs",prefs)
+
+driver = webdriver.Chrome(options=chromeOptions)
 #implicit wait
 driver.implicitly_wait(0.5)
 #maximize browser
