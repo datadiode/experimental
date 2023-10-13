@@ -4,15 +4,15 @@ image: Visual Studio 2015
 clone_script:
 - git clone -q --recursive --branch=%APPVEYOR_REPO_BRANCH% https://github.com/%APPVEYOR_REPO_NAME%.git %APPVEYOR_BUILD_FOLDER%
 - git checkout -qf %APPVEYOR_REPO_COMMIT%
-
-init:
-- REM C:/msys64/usr/bin/wget.exe https://download.microsoft.com/download/B/C/4/BC4FA89D-4F7B-4022-A4C1-2B3B6E08D8BE/AppBuilderSetup_VS2015_v25520.zip
 - C:/msys64/usr/bin/wget.exe https://download.microsoft.com/download/B/C/4/BC4FA89D-4F7B-4022-A4C1-2B3B6E08D8BE/AppBuilderSetup_VS2012_v50806.zip
-- C:/msys64/usr/bin/wget.exe https://github.com/datadiode/supplements/raw/main/Compact2013_SDK_GSeries.msi
+- REM C:/msys64/usr/bin/wget.exe https://github.com/datadiode/supplements/raw/main/Compact2013_SDK_GSeries.msi
+- C:/msys64/usr/bin/wget.exe https://github.com/embedded101/Compact2013.BSP/blob/master/sdk/Compact2013_SDK_86Duino_80B.zip
 - 7z.exe x -oAppBuilderSetup AppBuilderSetup_VS2012_v50806.zip
+- 7z.exe x Compact2013_SDK_86Duino_80B.zip
 - AppBuilderSetup\VSEmbedded_AppBuilder.exe /Quiet /NoRestart /Log log.txt & exit 0
 - type log.txt
-- msiexec /i Compact2013_SDK_GSeries.msi /quiet /norestart /log msilog.txt & exit 0
+- REM msiexec /i Compact2013_SDK_GSeries.msi /quiet /norestart /log msilog.txt & exit 0
+- msiexec /i Compact2013_SDK_86Duino_80B.msi /quiet /norestart /log msilog.txt & exit 0
 - type msilog.txt
 - REM wmic product get name
 
