@@ -12,7 +12,7 @@ clone_script:
 - C:/msys64/usr/bin/wget.exe -nv https://github.com/embedded101/Compact2013.BSP/raw/master/sdk/Compact2013_SDK_86Duino_80B.zip
 - 7z.exe x -oAppBuilderSetup AppBuilderSetup_VS2012_v50806.zip
 - 7z.exe x Compact2013_SDK_86Duino_80B.zip
-- REM 7z.exe x toradex_ce8_sdk_2.3_bis.zip
+- 7z.exe x toradex_ce8_sdk_2.3_bis.zip
 - AppBuilderSetup\VSEmbedded_AppBuilder.exe /Quiet /NoRestart /Log log.txt & exit 0
 - type log.txt
 - REM msiexec /i Compact2013_SDK_GSeries.msi /quiet /norestart /log msilog.txt & exit 0
