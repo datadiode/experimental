@@ -1,0 +1,12 @@
+version: 1.0.{build}
+image: Visual Studio 2015
+
+clone_script:
+- git clone -q --recursive --branch=%APPVEYOR_REPO_BRANCH% https://github.com/%APPVEYOR_REPO_NAME%.git %APPVEYOR_BUILD_FOLDER%
+- git checkout -qf %APPVEYOR_REPO_COMMIT%
+
+init:
+- "C:\msys\1.0\bin\wget.exe" -o AppBuilderSetup_VS2015_v25520.zip https://download.microsoft.com/download/B/C/4/BC4FA89D-4F7B-4022-A4C1-2B3B6E08D8BE/AppBuilderSetup_VS2015_v25520.zip
+
+build_script:
+- dir
