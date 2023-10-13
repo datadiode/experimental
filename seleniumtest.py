@@ -3,8 +3,17 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
+from selenium.webdriver.firefox.options import Options as FFOptions
+import os
 import time
-driver = webdriver.Firefox()
+
+options = FFOptions()
+options.set_preference("browser.download.folderList", 2)
+options.set_preference("browser.download.manager.showWhenStarting", False)
+options.set_preference("browser.download.dir", os.getcwd())
+options.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/x-gzip")
+
+driver = webdriver.Firefox(options)
 #implicit wait
 driver.implicitly_wait(0.5)
 #maximize browser
