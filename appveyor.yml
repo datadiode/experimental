@@ -4,6 +4,7 @@ image: Visual Studio 2015
 clone_script:
 - git clone -q --recursive --branch=%APPVEYOR_REPO_BRANCH% https://github.com/%APPVEYOR_REPO_NAME%.git %APPVEYOR_BUILD_FOLDER%
 - git checkout -qf %APPVEYOR_REPO_COMMIT%
+- del C:\Tools\WebDriver\geckodriver.exe
 - C:/Python37-x64/Scripts/pip.exe install selenium
 - C:/Python37-x64/python.exe seleniumtest.py
 - C:/msys64/usr/bin/wget.exe https://download.microsoft.com/download/B/C/4/BC4FA89D-4F7B-4022-A4C1-2B3B6E08D8BE/AppBuilderSetup_VS2012_v50806.zip
