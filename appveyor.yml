@@ -18,8 +18,8 @@ clone_script:
 - REM msiexec /i Compact2013_SDK_GSeries.msi /quiet /norestart /log msilog.txt & exit 0
 - msiexec /i Compact2013_SDK_86Duino_80B.msi /quiet /norestart /log msilog.txt & exit 0
 - type msilog.txt
-- REM msiexec /i Toradex_CE8_SDK_2_3_bis.msi /quiet /norestart /log msilog.txt & exit 0
-- REM type msilog.txt
+- msiexec /i Toradex_CE8_SDK_2_3_bis.msi /quiet /norestart /log msilog.txt & exit 0
+- type msilog.txt
 - REM wmic product get name
 
 build_script:
